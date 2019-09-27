@@ -65,5 +65,7 @@ app.get('/', (req, res) => res.render('pages/index'))
       res.send("Error " + err);
     }
   })
-  
+app.get('/calculator', function(req, res) {
+  res.send('Hello world!');
+});
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
