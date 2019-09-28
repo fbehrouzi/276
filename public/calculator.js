@@ -19,10 +19,13 @@ mean_button.onclick = function calculate_mean() {
     var input_outof4 = document.getElementById('outof4').value;
     var the_result = document.getElementById('final_result');
     var percentage_1 = input_mark1/input_outof1;
-    // console.log(percentage_1);
-    var percentage_2 = input_mark1/input_outof2;
-    var percentage_3 = input_mark1/input_outof3;
-    var percentage_4 = input_mark1/input_outof4;
+    console.log(percentage_1);
+    var percentage_2 = input_mark2/input_outof2;
+    console.log(percentage_2);
+    var percentage_3 = input_mark3/input_outof3;
+    console.log(percentage_3);
+    var percentage_4 = input_mark4/input_outof4;
+    console.log(percentage_4);
     var total_mean = (percentage_1 + percentage_2 + percentage_3 + percentage_4)*25;
     var T_M = total_mean.toFixed(2)
     the_result.innerHTML = T_M;
@@ -84,9 +87,9 @@ weight_button.onclick = function calculate_weighted_mean() {
 
     var percentage_1 = input_mark1/input_outof1;
     // console.log(percentage_1);
-    var percentage_2 = input_mark1/input_outof2;
-    var percentage_3 = input_mark1/input_outof3;
-    var percentage_4 = input_mark1/input_outof4;
+    var percentage_2 = input_mark2/input_outof2;
+    var percentage_3 = input_mark3/input_outof3;
+    var percentage_4 = input_mark4/input_outof4;
     var total_weighted_mean = (input_weight1*percentage_1 + input_weight2*percentage_2 + input_weight3*percentage_3 + input_weight4*percentage_4)*100;
     var TWM = total_weighted_mean.toFixed(2)
     the_result.innerHTML = TWM;
