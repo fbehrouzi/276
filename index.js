@@ -40,7 +40,7 @@ const { Pool } = require('pg');
 var pool = new Pool({
   user: 'postgres',
   host: 'localhost',
-  database: 'postgres',
+  database: 'users',
   password: 'darth9410',
   port: 5432
 });
@@ -52,6 +52,7 @@ app.set('view engine', 'ejs');
 app.get('/', (req, res) => {res.render('pages/index')});
 app.get('/hello', (req,res) => { res.render('pages/hello')});
 app.get('/users', (req,res) => {
+  // console.log('hi');
   var getUsersQuery = `SELECT * FROM userstab`;
   console.log(getUsersQuery);
   pool.query(getUsersQuery, (error, result) => {

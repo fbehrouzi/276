@@ -16,7 +16,7 @@
 // }
 
 // demonstrating callback functions in JS
-// var inter = setInterval(sayHello,0);
+var inter = setInterval(sayHello,0);
 
 function sayHello(){
   console.log("hello!");
