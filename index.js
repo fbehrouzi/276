@@ -51,11 +51,18 @@ var pool = new Pool({
   port: 5432
 });
 
-var tokimon_pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'tokimon_table',
-  password: 'darth9410',
+// var tokimon_pool = new Pool({
+//   user: 'postgres',
+//   host: 'localhost',
+//   database: 'tokimon_table',
+//   password: 'darth9410',
+//   port: 5432
+// });
+var _pool = new Pool({
+  user: 'vzkbmdvilkhmno',
+  host: 'ec2-54-83-55-122.compute-1.amazonaws.com',
+  database: 'd3rrhc5g9s6859',
+  password: '4fd02600d79fe28d3ac84bd21dfb51882cd9750d68ceb749acf96275b2fc75e9',
   port: 5432
 });
 
@@ -102,7 +109,7 @@ app.get('/users', (req,res) => {
 app.get('/', (request, response) => {
   response.json({ info: 'Node.js, Express, and Postgres API' })
 })
-// app.get('/tokimon', db.getUsers)
+app.get('/tokimon', db.getUsers)
 app.get('/tokimon/:id', db.getUserById)
 app.get('/tokimon/:id', (req,res) => {
   console.log(req.params.id);
