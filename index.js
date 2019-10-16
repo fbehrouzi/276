@@ -38,6 +38,12 @@ const bodyParser = require('body-parser')
 // const app = express()
 const db = require('./queries')
 // const port = 300
+app.use(bodyParser.json())
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+)
 
 // var pool;
 // pool = new Pool({
@@ -66,12 +72,6 @@ var tokimon_pool = new Pool({
   port: 5432
 });
 
-app.use(bodyParser.json())
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-)
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -106,10 +106,10 @@ app.get('/users', (req,res) => {
     res.render('pages/users', results)
   });
 });
-app.get('/', (request, response) => {
+app.get('/data', (request, response) => {
   response.json({ info: 'Node.js, Express, and Postgres API' })
 })
-app.get('/tokimon', db.getUsers)
+app.get('/data/tokimon', db.getUsers)
 app.get('/tokimon/:id', db.getUserById)
 app.get('/tokimon/:id', (req,res) => {
   console.log(req.params.id);
@@ -120,7 +120,7 @@ app.get('/users/:id', (req,res) => {
   var userIDQuery = `SELECT * FROM userstab WHERE uid=${req.params.id}`;
 });
 
-// app.post('/tokimon', db.createUser)
+app.post('/data/tokimon', db.createUser)
 
 app.post('/login', (req, res) => {
   //console.log('post');
@@ -129,6 +129,6 @@ app.post('/login', (req, res) => {
   res.send(`Hello, ${username}.  You have password ${password}`);
 });
 
-// app.put('/tokimon/:id', db.updateUser)
-// app.delete('/tokimon/:id', db.deleteUser)
+app.put('/tokimon/:id', db.updateUser)
+app.delete('/tokimon/:id', db.deleteUser)
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
