@@ -48,7 +48,7 @@ const updateUser = (request, response) => {
   const { tokimon_name, weight, height, fly, fight, fire, water, electric, frozen, total, trainer_name } = request.body
 
   _pool.query(
-    'UPDATE tokimon_name SET tokimon_name = $1, weight = $2, height = $3, fly = $4, fight = $5, fire = $6, water = $7, electric = $8, frozen = $9, total = $10, trainer_name = $11',
+    'UPDATE tokimon_table SET tokimon_name = $1, weight = $2, height = $3, fly = $4, fight = $5, fire = $6, water = $7, electric = $8, frozen = $9, total = $10, trainer_name = $11',
     [tokemon_name, weight, height, fly, fight, fire, water, electric, frozen, total, trainer_name],
     (error, results) => {
       if (error) {
