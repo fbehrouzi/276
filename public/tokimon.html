@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="/stylesheets/main.css"/>
+</head>
+<body>
+
+<h1>Grade Calculator</h1>
+<h3 style="color:#dd0000;">Activities</h3>
+<p>Give grade to the numeric activities</p>
+
+<table>
+	<col width="150">
+    <col width="150">
+    <col width="150">
+    <col width="150">
+    <col width="150">
+
+  <tr bgcolor="#E2E2E2">
+    <th>Name</th>
+    <th>Short Name</th>
+    <th>Weight</th>
+    <th>Grade</th>
+    <th>Percent</th>
+  </tr>
+
+  <tr bgcolor="#E6FCFF">
+
+    <td >Activity 1</td>
+
+    <td>A1</td>
+
+    <td><form action="/action_page.php">
+
+		<br><input id="weight1" type="numeric">
+
+ 		<br>
+
+		</form> </td>
+
+    <td><form action="/action_page.php">
+
+  	<br>
+
+  		<input id="mark1"type="number" oninput = "percent_calculator_1()">
+
+  	<br>/<br>
+
+ 		<input id="outof1" type="number" oninput = "percent_calculator_1()">
+
+ 		<br><br>
+
+		</form> </td>
+
+    <td id =perc_1></td>
+
+  </tr>
+
+  <tr bgcolor="#E6FCFF">
+
+    <td>Activity 2</td>
+
+    <td>A2</td>
+
+    <td><form action="/action_page.php">
+
+		<br><input id="weight2" type="number">
+
+ 		<br>
+
+		</form> </td>
+
+    <td><form action="/action_page.php">
+
+  	<br>
+
+  		<input id="mark2" type="number" oninput = "percent_calculator_2()">
+
+  	<br>/<br>
+
+ 		<input id="outof2" type="number" oninput = "percent_calculator_2()">
+
+ 		<br><br>
+
+		</form> </td>
+
+    <td id =perc_2></td>
+
+  </tr>
+
+  <tr bgcolor="#E6FCFF">
+
+    <td>Activity 3</td>
+
+    <td>A3</td>
+
+    <td><form action="/action_page.php">
+
+		<br><input id="weight3" type="number">
+
+ 		<br>
+
+		</form> </td>
+
+    <td><form action="/action_page.php">
+
+  	<br>
+
+  		<input id="mark3" type="number" oninput = "percent_calculator_3()">
+
+  	<br>/<br>
+
+ 		<input id="outof3" type="number" oninput = "percent_calculator_3()">
+
+ 		<br><br>
+
+		</form> </td>
+
+    <td id =perc_3></td>
+
+  </tr>
+
+  <tr bgcolor="#E6FCFF">
+
+    <td>Activity 4</td>
+
+    <td>A4</td>
+
+    <td><form action="/action_page.php">
+
+		<br><input id="weight4" type="number">
+
+ 		<br>
+
+		</form> </td>
+
+    <td><form action="/action_page.php">
+
+  	<br>
+
+  		<input id="mark4" type="number" oninput = "percent_calculator_4()">
+
+  	<br>/<br>
+
+ 		<input id="outof4" type="number" oninput = "percent_calculator_4()">
+
+ 		<br><br>
+
+		</form> </td>
+
+    <td id =perc_4></td>
+
+  </tr>
+
+
+
+</table>
+
+<h3 style="color:#dd0000;">Result</h3>
+
+<p id = "final_result" ></p>
+<button type="submit" id="weighted" class="button" style="margin-left: 1500px">WEIGHTED</button>
+
+<button id="mean" class="button">MEAN</button>
+
+
+
+<script src = "calculator.js" > </script>
+
+
+
+</body>
+
+</html>

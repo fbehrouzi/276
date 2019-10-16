@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+input {
+width: 50%;
+margin: 8px 0;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>Tokimon Table</h2>
+<button id="submit" class="button" onclick = "submit_tokemon()">Submit Tokimon</button>
+<table>
+
+
+  <tr>
+    <th>ID</th>
+    <th>Tokimon Name</th>
+    <th>Weight</th>
+    <th>Height</th>
+    <th>Fly</th>
+    <th>Fight</th>
+    <th>Fire</th>
+    <th>Water</th>
+    <th>Electric</th>
+    <th>Frozen</th>
+    <th>Total</th>
+    <th>Trainer Name</th>
+  </tr>
+  <tr>
+  <form>
+    <td><input id = "userid" type="text" name="UID" ></td>
+    <td><input id = "toke_name" type="text" name="tokimon_name" ></td>
+    <td><input id = "toke_weight" type="numeric" name="weight" ></td>
+    <td><input id = "toke_height" type="numeric" name="height" ></td>
+    <td><input id = "toke_fly" type="numeric" name="fly" ></td>
+    <td><input id = "toke_fight" type="numeric" name="fight"></td>
+    <td><input id = "toke_fire" type="numeric" name="fire"></td>
+    <td><input id = "toke_water" type="numeric" name="water"></td>
+    <td><input id = "toke_electric" type="numeric" name="electric"></td>
+    <td><input id = "toke_frozen" type="numeric" name="frozen" ></td>
+    <td><input id = "toke_total" type="numeric" name="total" ></td>
+    <td><input id = "toke_trainer_name" type="text" name="trainer_name"></td>
+  </form>
+  </tr>
+
+
+
+  <tr>
+      <% rows.forEach((r) => { %>
+      <td><%= r.id %></td>
+      <td><%= r.tokimon_name %></td>
+      <td><%= r.weight %></td>
+      <td><%= r.height %></td>
+      <td><%= r.fly %></td>
+      <td><%= r.fight %></td>
+      <td><%= r.fire %></td>
+      <td><%= r.water %></td>
+      <td><%= r.electric %></td>
+      <td><%= r.frozen %></td>
+      <td><%= r.total %></td>
+      <td><%= r.trainer_name %></td>
+
+      <% }); %>
+  </tr>
+<p id = "final_result" >fuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu</p>
+</table>
+</body>
+</html>
