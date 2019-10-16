@@ -58,7 +58,7 @@ var pool = new Pool({
 //   password: 'darth9410',
 //   port: 5432
 // });
-var _pool = new Pool({
+var tokimon_pool = new Pool({
   user: 'vzkbmdvilkhmno',
   host: 'ec2-54-83-55-122.compute-1.amazonaws.com',
   database: 'd3rrhc5g9s6859',
